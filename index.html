@@ -560,7 +560,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <stop offset="1" stop-color="#5fa15f"></stop>
         </linearGradient>
         <mask id="hfTrailMask">
-          <path d="M-40,660 C20,600 60,560 74,500 C88,436 78,380 96,330 C118,268 146,200 190,150 C232,104 280,78 340,76 C400,74 452,86 505,102 C560,118 600,128 652,131 C740,136 860,140 998,149 C1032,152 1050,166 1062,196 C1078,236 1084,320 1083,417 C1082,452 1070,478 1047,495 C1018,516 962,520 918,524 C860,529 790,532 725,534 C700,535 683,542 668,560 C654,578 650,606 650,640 L649,698" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-trail=""></path>
+          <path shape-rendering="optimizeSpeed" d="M-40,660 C20,600 60,560 74,500 C88,436 78,380 96,330 C118,268 146,200 190,150 C232,104 280,78 340,76 C400,74 452,86 505,102 C560,118 600,128 652,131 C740,136 860,140 998,149 C1032,152 1050,166 1062,196 C1078,236 1084,320 1083,417 C1082,452 1070,478 1047,495 C1018,516 962,520 918,524 C860,529 790,532 725,534 C700,535 683,542 668,560 C654,578 650,606 650,640 L649,698" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-trail=""></path>
         </mask>
       </defs>
       <path d="M-40,660 C20,600 60,560 74,500 C88,436 78,380 96,330 C118,268 146,200 190,150 C232,104 280,78 340,76 C400,74 452,86 505,102 C560,118 600,128 652,131 C740,136 860,140 998,149 C1032,152 1050,166 1062,196 C1078,236 1084,320 1083,417 C1082,452 1070,478 1047,495 C1018,516 962,520 918,524 C860,529 790,532 725,534 C700,535 683,542 668,560 C654,578 650,606 650,640 L649,698" fill="none" stroke="url(#hfPlaneG)" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 13" mask="url(#hfTrailMask)" opacity="0.44"></path>
@@ -573,7 +573,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <stop offset="1" stop-color="#5fa15f"></stop>
         </linearGradient>
         <mask id="hfTrailMaskM">
-          <path d="M-30,58 C10,70 44,79 78,83 C132,90 192,97 244,107 C298,118 332,164 313,230 C303,284 264,314 289,353 C320,378 334,404 331,436 C330,472 258,476 218,486 C206,492 200,499 200,505 L200,516" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-trailm=""></path>
+          <path shape-rendering="optimizeSpeed" d="M-30,58 C10,70 44,79 78,83 C132,90 192,97 244,107 C298,118 332,164 313,230 C303,284 264,314 289,353 C320,378 334,404 331,436 C330,472 258,476 218,486 C206,492 200,499 200,505 L200,516" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" data-trailm=""></path>
         </mask>
       </defs>
       <path d="M-30,58 C10,70 44,79 78,83 C132,90 192,97 244,107 C298,118 332,164 313,230 C303,284 264,314 289,353 C320,378 334,404 331,436 C330,472 258,476 218,486 C206,492 200,499 200,505 L200,516" fill="none" stroke="url(#hfPlaneGM)" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 13" mask="url(#hfTrailMaskM)" opacity="0.44"></path>
@@ -735,10 +735,10 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
         <stop offset="1" stop-color="#5fa15f"></stop>
       </linearGradient>
       <mask id="hfPageMask">
-        <path data-ptrail="" d="M0,0" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"></path>
+        <path data-ptrail="" shape-rendering="optimizeSpeed" d="M0,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"></path>
       </mask>
     </defs>
-    <path data-ppath="" data-ptrailv="" d="M0,0" fill="none" stroke="url(#hfPageG)" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 13" mask="url(#hfPageMask)" opacity="0.44"></path>
+    <path data-ppath="" data-ptrailv="" d="M0,0" fill="none" stroke="url(#hfPageG)" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 13" mask="url(#hfPageMask)" stroke-opacity="0.44"></path>
   </svg>
   <div data-pplane="">
     <svg aria-hidden="true" data-pbody="" width="34" height="20" viewBox="-17 -10 34 20" style="display:block;overflow:visible">
@@ -2423,7 +2423,8 @@ class Component extends DCLogic {
     document.querySelectorAll('[data-plane] > path, [data-planem] > path, [data-ptrailv]').forEach((p) => {
       p.setAttribute('stroke-dasharray', k.dash);
       p.setAttribute('stroke-width', k.w);
-      p.setAttribute('opacity', k.o);
+      p.removeAttribute('opacity');
+      p.setAttribute('stroke-opacity', k.o);
     });
     document.querySelectorAll('[data-pt]').forEach((b) => {
       if (b.getAttribute('data-pt') === this._ptrailv) b.setAttribute('data-sel', '');
@@ -3610,8 +3611,9 @@ class Component extends DCLogic {
       g.style.transform = 'translate(-50%,-50%) translate3d(' + (s.x * sx + swy).toFixed(2) + 'px,' + (s.y * sy + bob).toFixed(2) + 'px,0) rotate(' + deg.toFixed(2) + 'deg)';
       const op = this._pageLive ? '0' : '1';
       if (this._lastOp !== op) { g.style.opacity = op; this._lastOp = op; }
-      const dof = String(Math.max(0, 1 - p));
-      if (this._lastDof !== dof) { path.setAttribute('stroke-dashoffset', dof); this._lastDof = dof; }
+      const HSTEPS = this._hSteps || (this._hSteps = Math.max(80, Math.round(len / 20)));
+      const qd = Math.round(Math.max(0, Math.min(1, p)) * HSTEPS) / HSTEPS;
+      if (this._lastDof !== qd) { path.setAttribute('stroke-dashoffset', String(1 - qd)); this._lastDof = qd; }
       for (let i = 0; i < els.length; i += 1) {
         if (!els[i]) continue;
         const want = p >= marks[i] - 0.005;
@@ -3623,6 +3625,8 @@ class Component extends DCLogic {
     };
     this._markOn = [];
     this._svgRectDirty = true;
+    this._hSteps = null;
+    this._lastDof = null;
 
     this._heroDraw = draw;
     if (!this._hwatch) {
@@ -3863,6 +3867,7 @@ class Component extends DCLogic {
     this._nodeOn = [];
     this._liveWas = null;
     this._trailDof = null;
+    this._pSteps = null;
     if (this._praf) { cancelAnimationFrame(this._praf); this._praf = null; }
 
     const build = () => {
@@ -4065,8 +4070,9 @@ class Component extends DCLogic {
             heroG.style.pointerEvents = live ? 'none' : '';
           }
         }
-        const dof = String(Math.max(0, 1 - p));
-        if (this._trailDof !== dof) { trail.setAttribute('stroke-dashoffset', dof); this._trailDof = dof; }
+        const STEPS = this._pSteps || (this._pSteps = Math.max(80, Math.round(this._plen / 20)));
+        const q = Math.round(Math.max(0, Math.min(1, p)) * STEPS) / STEPS;
+        if (this._trailDof !== q) { trail.setAttribute('stroke-dashoffset', String(1 - q)); this._trailDof = q; }
       }
       if (!this._nodeOn) this._nodeOn = [];
       for (let i = 0; i < this._fracs.length; i += 1) {
