@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kronportfolio.vercel.app/sitemap.xml
