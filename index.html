@@ -27,10 +27,10 @@
 <title>Kron Raufi — Product Designer &amp; UI/UX Designer</title>
 <meta name="description" content="Portfolio of Kron Raufi, a product designer and UI/UX designer based in Skopje. Case studies on Cloudsort, Focus, Bavox and mDoktor, plus visual and graphic design work.">
 <meta name="author" content="Kron Raufi">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="supported-color-schemes" content="light dark">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#ffffff">
+<script defer src="/_vercel/insights/script.js"></script>
+<meta name="supported-color-schemes" content="light">
 <link rel="canonical" href="https://kronportfolio.vercel.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="profile">
@@ -62,7 +62,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 @keyframes hfSlideL { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
 @keyframes hfFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes hfBar { from { width: 0%; } to { width: 100%; } }
-:root { color-scheme: light dark; --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --muted2: #86868b; --surface: #f5f5f7; --border: rgba(0,0,0,0.09); --navbg: rgba(255,255,255,0.72); --track: #ececf0; }
+:root { color-scheme: only light; --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --muted2: #86868b; --surface: #f5f5f7; --border: rgba(0,0,0,0.09); --navbg: rgba(255,255,255,0.72); --track: #ececf0; }
 [data-theme="dark"] { color-scheme: dark; --bg: #000000; --fg: #f5f5f7; --muted: #a1a1a6; --muted2: #8e8e93; --surface: #141416; --border: rgba(255,255,255,0.16); --navbg: rgba(0,0,0,0.66); --track: #2c2c2e; }
 [data-theme] section, [data-theme] div, [data-theme] a, [data-theme] p, [data-theme] h1, [data-theme] h2, [data-theme] h3, [data-theme] figcaption, [data-theme] span, [data-theme] button { transition: background-color 0.55s ease, color 0.55s ease, border-color 0.55s ease; }
 [data-heroui] [data-mark] { opacity: 0; transform: translateY(9px) scale(0.97); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
@@ -2357,16 +2357,10 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   &quot;showMarginNotes&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Case studies&quot; }
 }">
 class Component extends DCLogic {
-  state = { screen: 'index', lb: null, pending: null, theme: 'auto', menu: false };
+  state = { screen: 'index', lb: null, pending: null, theme: 'light', menu: false };
 
-_prefersDark() {
-    try { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
-    catch (err) { return false; }
-  }
-
-  _effTheme() {
-    if (this.state.theme !== 'auto') return this.state.theme;
-    return this._prefersDark() ? 'dark' : 'light';
+_effTheme() {
+    return this.state.theme === 'dark' ? 'dark' : 'light';
   }
 
   _paintCanvas() {
@@ -2380,7 +2374,7 @@ _prefersDark() {
     this._paintCanvas();
     try {
       const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      const on = () => { if (this.state.theme === 'auto') { this.forceUpdate(); this._paintCanvas(); } };
+      const on = () => { this._paintCanvas(); };
       if (mq.addEventListener) mq.addEventListener('change', on);
       else if (mq.addListener) mq.addListener(on);
     } catch (err) { /* ignore */ }
