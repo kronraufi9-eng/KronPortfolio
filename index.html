@@ -875,7 +875,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
       <div data-vishead="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px">
         <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
           <div style="font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px">Visual work</div>
-          <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:24ch">The other half of the career.</h2>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:24ch">The other half of the <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">career.</span></h2>
         </div>
         <a href="#" onClick="{{ openArchive }}" style="font-size:15px;color:#0071e3;white-space:nowrap;padding-bottom:6px">View full archive ›</a>
       </div>
@@ -898,7 +898,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:52px">
         <div data-reveal="" style="opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
           <div style="font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px">Experience</div>
-          <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:24ch">Four teams, four years.</h2>
+          <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:24ch">The teams that <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">shaped</span> the work.</h2>
         </div>
         <div style="font-size:13px;color:var(--muted2);letter-spacing:-0.005em;white-space:nowrap;padding-bottom:6px">2022 — 2026</div>
       </div>
@@ -989,7 +989,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
     <div style="position:relative;max-width:1140px;margin:0 auto">
       <div data-reveal="" style="margin-bottom:52px;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
         <div style="font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px">About</div>
-        <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:26ch">I've been <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">creating</span> for as long<br>as I can <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">remember.</span></h2>
+        <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:26ch">I've been <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">creating</span> for as long<br>as I can remember.</h2>
       </div>
       <div style="display:grid;grid-template-columns:368px 1fr;gap:64px;align-items:start">
         <div data-reveal="" data-anch="34" data-offx="232" data-offy="72" style="position:relative;display:flex;align-items:flex-start;justify-content:center;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
@@ -3482,6 +3482,7 @@ class Component extends DCLogic {
     }
     const section = svg.parentElement;
     const path = svg.querySelector(mob ? '[data-trailm]' : '[data-trail]');
+    const vis = svg.querySelector(':scope > path');
     const g = section.querySelector('[data-planeg]');
     if (!section || !path || !g || (this._planeSection === section && this._planeMob === mob)) return;
     if (this._planeRaf) cancelAnimationFrame(this._planeRaf);
@@ -3611,9 +3612,14 @@ class Component extends DCLogic {
       g.style.transform = 'translate(-50%,-50%) translate3d(' + (s.x * sx + swy).toFixed(2) + 'px,' + (s.y * sy + bob).toFixed(2) + 'px,0) rotate(' + deg.toFixed(2) + 'deg)';
       const op = this._pageLive ? '0' : '1';
       if (this._lastOp !== op) { g.style.opacity = op; this._lastOp = op; }
-      const HSTEPS = this._hSteps || (this._hSteps = Math.max(80, Math.round(len / 20)));
-      const qd = Math.round(Math.max(0, Math.min(1, p)) * HSTEPS) / HSTEPS;
-      if (this._lastDof !== qd) { path.setAttribute('stroke-dashoffset', String(1 - qd)); this._lastDof = qd; }
+      if (vis && this._hSeg) {
+        const HN = this._hSeg.length;
+        const hk = Math.round(Math.max(0, Math.min(1, p)) * HN);
+        if (this._hK !== hk) {
+          this._hK = hk;
+          vis.setAttribute('d', hk < 1 ? 'M0,0' : this._hM + this._hSeg.slice(0, hk).join(''));
+        }
+      }
       for (let i = 0; i < els.length; i += 1) {
         if (!els[i]) continue;
         const want = p >= marks[i] - 0.005;
@@ -3623,6 +3629,14 @@ class Component extends DCLogic {
         else els[i].removeAttribute('data-shown');
       }
     };
+    if (vis) {
+      const hs = new Array(LUTN);
+      for (let i = 1; i <= LUTN; i += 1) hs[i - 1] = 'L' + lut[i * 4].toFixed(1) + ',' + lut[i * 4 + 1].toFixed(1);
+      this._hSeg = hs;
+      this._hM = 'M' + lut[0].toFixed(1) + ',' + lut[1].toFixed(1);
+      this._hK = null;
+      vis.removeAttribute('mask');
+    }
     this._markOn = [];
     this._svgRectDirty = true;
     this._hSteps = null;
@@ -3868,6 +3882,8 @@ class Component extends DCLogic {
     this._liveWas = null;
     this._trailDof = null;
     this._pSteps = null;
+    this._trailK = null;
+    this._pSeg = null;
     if (this._praf) { cancelAnimationFrame(this._praf); this._praf = null; }
 
     const build = () => {
@@ -3946,6 +3962,12 @@ class Component extends DCLogic {
         }
         this._plut = L;
         this._plutN = S;
+        const segs = new Array(S);
+        for (let i = 1; i <= S; i += 1) segs[i - 1] = 'L' + samples[i].x.toFixed(1) + ',' + samples[i].y.toFixed(1);
+        this._pSeg = segs;
+        this._pM = 'M' + samples[0].x.toFixed(1) + ',' + samples[0].y.toFixed(1);
+        this._trailK = null;
+        path.removeAttribute('mask');
       }
       this._fracs = anchIdx.map((ai) => {
         const p = pts[ai];
@@ -4070,9 +4092,14 @@ class Component extends DCLogic {
             heroG.style.pointerEvents = live ? 'none' : '';
           }
         }
-        const STEPS = this._pSteps || (this._pSteps = Math.max(80, Math.round(this._plen / 20)));
-        const q = Math.round(Math.max(0, Math.min(1, p)) * STEPS) / STEPS;
-        if (this._trailDof !== q) { trail.setAttribute('stroke-dashoffset', String(1 - q)); this._trailDof = q; }
+        if (this._pSeg) {
+          const NS = this._pSeg.length;
+          const kk = Math.round(Math.max(0, Math.min(1, p)) * NS);
+          if (this._trailK !== kk) {
+            this._trailK = kk;
+            path.setAttribute('d', kk < 1 ? 'M0,0' : this._pM + this._pSeg.slice(0, kk).join(''));
+          }
+        }
       }
       if (!this._nodeOn) this._nodeOn = [];
       for (let i = 0; i < this._fracs.length; i += 1) {
