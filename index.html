@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preload" as="script" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" href="https://unpkg.com/react@18.3.1/umd/react.production.min.js">
+<link rel="preload" as="script" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" href="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js">
+<link rel="dns-prefetch" href="https://unpkg.com">
 <script src="./support.js"></script>
 <template id="__bundler_thumbnail" data-bg-color="#ffffff">
   <svg aria-hidden="true" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -23,6 +27,8 @@
 <title>Kron Raufi — Product Designer &amp; UI/UX Designer</title>
 <meta name="description" content="Portfolio of Kron Raufi, a product designer and UI/UX designer based in Skopje. Case studies on Cloudsort, Focus, Bavox and mDoktor, plus visual and graphic design work.">
 <meta name="author" content="Kron Raufi">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
 <link rel="canonical" href="https://kronportfolio.vercel.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="profile">
@@ -53,8 +59,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 @keyframes hfSlideL { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
 @keyframes hfFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes hfBar { from { width: 0%; } to { width: 100%; } }
-:root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --muted2: #86868b; --surface: #f5f5f7; --border: rgba(0,0,0,0.09); --navbg: rgba(255,255,255,0.72); --track: #ececf0; }
-[data-theme="dark"] { --bg: #000000; --fg: #f5f5f7; --muted: #a1a1a6; --muted2: #8e8e93; --surface: #141416; --border: rgba(255,255,255,0.16); --navbg: rgba(0,0,0,0.66); --track: #2c2c2e; }
+:root { color-scheme: only light; --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --muted2: #86868b; --surface: #f5f5f7; --border: rgba(0,0,0,0.09); --navbg: rgba(255,255,255,0.72); --track: #ececf0; }
+[data-theme="dark"] { color-scheme: dark; --bg: #000000; --fg: #f5f5f7; --muted: #a1a1a6; --muted2: #8e8e93; --surface: #141416; --border: rgba(255,255,255,0.16); --navbg: rgba(0,0,0,0.66); --track: #2c2c2e; }
 [data-theme] section, [data-theme] div, [data-theme] a, [data-theme] p, [data-theme] h1, [data-theme] h2, [data-theme] h3, [data-theme] figcaption, [data-theme] span, [data-theme] button { transition: background-color 0.55s ease, color 0.55s ease, border-color 0.55s ease; }
 [data-heroui] [data-mark] { opacity: 0; transform: translateY(9px) scale(0.97); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
 [data-heroui] [data-mark="4"] { transform: translateX(16px); }
@@ -421,14 +427,12 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   [style*="padding: 26px 24px"] { padding: 20px !important; }
   section p[style*="font-size: 21px"] { font-size: 18px !important; }
   section p[style*="font-size: 19px"] { font-size: 17px !important; }
-  [data-factcard] { position: fixed !important; left: 14px !important; right: 14px !important; top: auto !important; bottom: 18px !important; width: auto !important; max-width: none !important; display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px !important; border-radius: 16px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.22) !important; z-index: 900 !important; transform-origin: 50% 100% !important; }
-  [data-factcard] > img { width: 84px !important; height: 84px !important; aspect-ratio: auto !important; object-fit: cover !important; flex: none !important; }
-  [data-factcard] > span:not([data-factcap]) { width: 84px !important; flex: none !important; }
-  [data-factcard] [data-factcap] { flex: 1 !important; padding: 0 4px 0 2px !important; font-size: 12.5px !important; }
-  [data-factcard]::after { display: none !important; }
-  [data-factcard] [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; gap: 3px !important; }
   [data-xp]:not([data-fly]) { min-height: 0 !important; }
-  [data-factcard] { position: absolute !important; left: 50% !important; right: auto !important; top: auto !important; bottom: calc(100% + 12px) !important; width: 264px !important; max-width: 80vw !important; transform: translateX(-50%) translateY(6px) scale(0.97) !important; transform-origin: bottom center !important; }
+  [data-factcard]::after { display: none !important; }
+  [data-factcard] { position: absolute !important; left: 50% !important; right: auto !important; top: auto !important; bottom: calc(100% + 12px) !important; display: block !important; width: 232px !important; max-width: 78vw !important; padding: 8px !important; border-radius: 17px !important; box-shadow: 0 18px 46px rgba(0,0,0,0.17) !important; z-index: 900 !important; transform: translateX(-50%) translateY(6px) scale(0.97) !important; transform-origin: bottom center !important; }
+  [data-factcard] > img { width: 100% !important; height: auto !important; }
+  [data-factcard] [data-factcap] { padding: 8px 5px 2px !important; font-size: 11.5px !important; }
+  [data-factcard] [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; gap: 5px !important; }
   [data-fact]:hover > [data-factcard], [data-fact][data-fopen] > [data-factcard] { transform: translateX(-50%) !important; }
   [data-factcard][data-fr] { left: 50% !important; right: auto !important; }
   [data-xpwrap][data-cur] [data-xpclose] { position: absolute !important; left: auto !important; right: 14px !important; top: 14px !important; bottom: auto !important; transform: none !important; width: 30px !important; height: 30px !important; min-width: 0 !important; padding: 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 0 !important; border-radius: 999px !important; background: var(--surface) !important; border: 0.5px solid var(--border) !important; font-size: 0 !important; z-index: 7 !important; }
@@ -828,7 +832,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <div style="font-size:13px;color:var(--muted2);letter-spacing:-0.005em">Product · UX / UI &nbsp;·&nbsp; Design lead, v1.5 → v3.0 &nbsp;·&nbsp; 2024 — 2026</div>
           <div style="font-size:13px;color:#0071e3;margin-top:auto;padding-top:18px">Read the case study ›</div>
         </div>
-        <img loading="lazy" decoding="async" src="images/cloudsort/exchange-large.webp" alt="Cloudsort Exchange" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
+        <img loading="lazy" decoding="async" src="images/cloudsort/exchange-large-1170.webp" alt="Cloudsort Exchange" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
       </a>
 
       <a href="#" onClick="{{ openFocus }}" data-csc="" data-reveal="" data-anch="11" style="display:grid;grid-template-columns:30px 1fr 340px;gap:24px;align-items:start;width:84%;margin:0 0 22px auto;padding:26px 30px;background:var(--bg);border:0.5px solid var(--border);border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,0.03);text-decoration:none;color:inherit;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1),box-shadow 0.5s ease,border-color 0.45s ease" style-hover="box-shadow:0 16px 44px rgba(0,0,0,0.09);border-color:rgba(0,0,0,0.18);text-decoration:none">
@@ -840,7 +844,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <div style="font-size:13px;color:#0071e3;margin-top:auto;padding-top:18px">Read the case study ›</div>
         </div>
         <div style="position:relative;margin-top:6px">
-          <img loading="lazy" decoding="async" src="images/focus/website.webp" alt="Focus marketing site" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border)">
+          <img loading="lazy" decoding="async" src="images/focus/website-1170.webp" alt="Focus marketing site" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border)">
           <div style="position:absolute;bottom:9px;right:9px;font-size:10px;font-weight:600;letter-spacing:0.06em;color:#fff;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);padding:3px 8px;border-radius:980px">NDA</div>
         </div>
       </a>
@@ -853,7 +857,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <div style="font-size:13px;color:var(--muted2);letter-spacing:-0.005em">Conversion redesign &nbsp;·&nbsp; Solo, end to end &nbsp;·&nbsp; 2026</div>
           <div style="font-size:13px;color:#0071e3;margin-top:auto;padding-top:18px">Read the case study ›</div>
         </div>
-        <img loading="lazy" decoding="async" src="images/kraymer/hero.webp" alt="Kraymer Arts homepage" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:center top;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
+        <img loading="lazy" decoding="async" src="images/kraymer/hero-1170.webp" alt="Kraymer Arts homepage" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:center top;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
       </a>
 
       <a href="#" onClick="{{ openBavox }}" data-csc="" data-reveal="" data-anch="13" style="display:grid;grid-template-columns:30px 1fr 340px;gap:24px;align-items:start;width:84%;margin:0 0 0 auto;padding:26px 30px;background:var(--bg);border:0.5px solid var(--border);border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,0.03);text-decoration:none;color:inherit;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1),box-shadow 0.5s ease,border-color 0.45s ease" style-hover="box-shadow:0 16px 44px rgba(0,0,0,0.09);border-color:rgba(0,0,0,0.18);text-decoration:none">
@@ -864,7 +868,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
           <div style="font-size:13px;color:var(--muted2);letter-spacing:-0.005em">Switzerland &nbsp;·&nbsp; Sole designer &nbsp;·&nbsp; 8 months, 2023 &nbsp;·&nbsp; still in use</div>
           <div style="font-size:13px;color:#0071e3;margin-top:auto;padding-top:18px">Read the case study ›</div>
         </div>
-        <img loading="lazy" decoding="async" src="images/bavox/dashboard.webp" alt="Bavox dashboard" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
+        <img loading="lazy" decoding="async" src="images/bavox/dashboard-1170.webp" alt="Bavox dashboard" data-zoom="off" style="width:100%;height:206px;object-fit:cover;object-position:top left;border-radius:14px;border:0.5px solid var(--border);margin-top:6px">
       </a>
     </div>
   </section>
@@ -880,14 +884,14 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
         <a href="#" onClick="{{ openArchive }}" style="font-size:15px;color:#0071e3;white-space:nowrap;padding-bottom:6px">View full archive ›</a>
       </div>
       <div data-lbgrid="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/new-balance-skate.webp" alt="New Balance — Your New Skating Shoes" data-reveal="" data-anch="20" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/nike-just-do-it.webp" alt="Nike — Just Do It poster" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/travis-scott-reverse-mocha.webp" alt="Travis Scott x Air Jordan — Reverse Mocha" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/mobb-deep-chronic-2s.webp" alt="Mobb Deep — The Chronic Pt. 2 cover" data-reveal="" data-anch="21" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/lost-thrill-of-it-all.webp" alt="Lost in the Thrill of It All cover" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/white-rose.webp" alt="White Rose cover" data-reveal="" data-anch="22" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/air-jordan-1-reverse-black.webp" alt="Nike Air Jordan 1 — Reverse Black" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/visual/agazul-anejo-cristalino.webp" alt="Agazul — Añejo Cristalino" data-reveal="" data-anch="23" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/new-balance-skate.webp" srcset="images/visual/new-balance-skate-480.webp 480w, images/visual/new-balance-skate-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="New Balance — Your New Skating Shoes" data-reveal="" data-anch="20" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/nike-just-do-it.webp" srcset="images/visual/nike-just-do-it-480.webp 480w, images/visual/nike-just-do-it-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Nike — Just Do It poster" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/travis-scott-reverse-mocha.webp" srcset="images/visual/travis-scott-reverse-mocha-480.webp 480w, images/visual/travis-scott-reverse-mocha-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Travis Scott x Air Jordan — Reverse Mocha" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/mobb-deep-chronic-2s.webp" srcset="images/visual/mobb-deep-chronic-2s-480.webp 480w, images/visual/mobb-deep-chronic-2s-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Mobb Deep — The Chronic Pt. 2 cover" data-reveal="" data-anch="21" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/lost-thrill-of-it-all.webp" srcset="images/visual/lost-thrill-of-it-all-480.webp 480w, images/visual/lost-thrill-of-it-all-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Lost in the Thrill of It All cover" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/white-rose.webp" srcset="images/visual/white-rose-480.webp 480w, images/visual/white-rose-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="White Rose cover" data-reveal="" data-anch="22" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/air-jordan-1-reverse-black.webp" srcset="images/visual/air-jordan-1-reverse-black-480.webp 480w, images/visual/air-jordan-1-reverse-black-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Nike Air Jordan 1 — Reverse Black" data-reveal="" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/visual/agazul-anejo-cristalino.webp" srcset="images/visual/agazul-anejo-cristalino-480.webp 480w, images/visual/agazul-anejo-cristalino-800.webp 800w" sizes="(max-width: 760px) 45vw, (max-width: 1200px) 24vw, 290px" alt="Agazul — Añejo Cristalino" data-reveal="" data-anch="23" data-zoom="off" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;background:var(--bg);opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
       </div>
       <div style="font-size:13px;color:var(--muted2);margin-top:18px;letter-spacing:-0.005em">A selection of eight from the archive.</div>
     </div>
@@ -989,7 +993,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
     <div style="position:relative;max-width:1140px;margin:0 auto">
       <div data-reveal="" style="margin-bottom:52px;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
         <div style="font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px">About</div>
-        <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:26ch">I've been <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">creating</span> for as long<br>as I can remember.</h2>
+        <h2 style="font-size:clamp(30px,3.6vw,44px);font-weight:600;letter-spacing:-0.028em;line-height:1.1;margin:0;max-width:26ch">I've been <span data-shine="" data-phrase="" style="background:linear-gradient(100deg,#a084c8 0%,#8a8bcb 14%,#6f8fc9 28%,#4f9a9a 42%,#5fa15f 56%,#a084c8 72%,#6f8fc9 86%,#5fa15f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">creating</span> all my life.</h2>
       </div>
       <div style="display:grid;grid-template-columns:368px 1fr;gap:64px;align-items:start">
         <div data-reveal="" data-anch="34" data-offx="232" data-offy="72" style="position:relative;display:flex;align-items:flex-start;justify-content:center;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
@@ -997,9 +1001,9 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
         </div>
         <div style="min-width:0">
           <p data-reveal="" style="font-size:21px;line-height:1.55;letter-spacing:-0.014em;color:var(--fg);margin:0 0 24px;max-width:46ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">I've been a designer and artist for as long as I can remember. <span data-fact=""><span data-factcard="" data-fr="" style="width:186px"><img loading="lazy" decoding="async" src="images/kron-kid-600.webp" alt="Kron as a kid" data-zoom="off" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:11px;display:block"><span data-factcap=""><span>Somewhere around the start</span></span></span>As a kid</span>, I was always <span data-fact=""><span data-factcard="" data-fr="" style="width:172px"><img loading="lazy" decoding="async" src="images/desk-drawing.webp" alt="Drawing on a desk" data-zoom="off" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:11px;display:block;background:var(--surface)"><span data-factcap=""><span>Anywhere I could draw</span></span></span>drawing on paper, in notebooks</span>, or anywhere I could find a blank space.</p>
-          <p data-reveal="" style="font-size:18px;line-height:1.6;letter-spacing:-0.011em;color:var(--muted);margin:0 0 24px;max-width:50ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">At the same time, I was fascinated by computers and the digital world. I loved exploring new products, games, websites, and the way people interacted with them. Over time, that curiosity naturally led me from <span style="white-space:nowrap"><span data-fact=""><span data-factcard="" data-fr="" style="width:228px"><span style="display:grid;grid-template-columns:1fr 1fr;gap:5px"><img loading="lazy" decoding="async" src="images/visual/nike-just-do-it.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/air-jordan-1-reverse-black.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/hold-the-vision.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/white-rose.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"></span><span data-factcap=""><span>Graphic work</span><a href="#" onClick="{{ goVisual }}" style="color:#0071e3;text-decoration:none;white-space:nowrap">See the wall →</a></span></span>graphic design</span> into <span data-fact=""><span data-factcard="" data-fr="" style="width:236px"><img loading="lazy" decoding="async" src="images/cloudsort/exchange.webp" alt="Cloudsort" data-zoom="off" style="width:100%;aspect-ratio:16/10;object-fit:cover;object-position:0 0;border-radius:11px;display:block;background:var(--surface)"><span data-factcap=""><span>Cloudsort</span><a href="#" onClick="{{ goWork }}" style="color:#0071e3;text-decoration:none;white-space:nowrap">Case study →</a></span></span>product and UI/UX design</span>.</span></p>
+          <p data-reveal="" style="font-size:18px;line-height:1.6;letter-spacing:-0.011em;color:var(--muted);margin:0 0 24px;max-width:50ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">At the same time, I was fascinated by computers and the digital world. I loved exploring new products, games, websites, and the way people interacted with them. Over time, that curiosity naturally led me from <span style="white-space:nowrap"><span data-fact=""><span data-factcard="" data-fr="" style="width:228px"><span style="display:grid;grid-template-columns:1fr 1fr;gap:5px"><img loading="lazy" decoding="async" src="images/visual/nike-just-do-it-480.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/air-jordan-1-reverse-black-480.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/hold-the-vision-480.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"><img loading="lazy" decoding="async" src="images/visual/white-rose-480.webp" alt="" data-zoom="off" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px;display:block;background:var(--surface)"></span><span data-factcap=""><span>Graphic work</span><a href="#" onClick="{{ goVisual }}" style="color:#0071e3;text-decoration:none;white-space:nowrap">See the wall →</a></span></span>graphic design</span> into <span data-fact=""><span data-factcard="" data-fr="" style="width:236px"><img loading="lazy" decoding="async" src="images/cloudsort/exchange.webp" alt="Cloudsort" data-zoom="off" style="width:100%;aspect-ratio:16/10;object-fit:cover;object-position:0 0;border-radius:11px;display:block;background:var(--surface)"><span data-factcap=""><span>Cloudsort</span><a href="#" onClick="{{ goWork }}" style="color:#0071e3;text-decoration:none;white-space:nowrap">Case study →</a></span></span>product and UI/UX design</span>.</span></p>
           <p data-reveal="" style="font-size:18px;line-height:1.6;letter-spacing:-0.011em;color:var(--muted);margin:0 0 24px;max-width:50ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">Today, I bring both sides with me: the visual craft of a graphic designer and the curiosity of a product designer.</p>
-          <p data-reveal="" style="font-size:18px;line-height:1.6;letter-spacing:-0.011em;color:var(--muted);margin:0 0 34px;max-width:50ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">I genuinely love what I do, and <span data-fact=""><span data-factcard="" style="width:198px"><span data-lifewrap="" style="position:relative;display:block;width:100%;aspect-ratio:4/3;border-radius:11px;background:#0d0d0f;overflow:hidden"><span data-lifetxt="" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:-0.008em;color:rgba(255,255,255,0.42);-webkit-text-fill-color:rgba(255,255,255,0.42)">My life without art</span><img loading="lazy" decoding="async" src="images/garden.webp" alt="A garden" data-life="" data-zoom="off" style="width:100%;height:100%"><span data-lifeon="" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 14px;font-size:14px;font-weight:600;letter-spacing:-0.01em;color:#fff;-webkit-text-fill-color:#fff;text-shadow:0 1px 12px rgba(0,0,0,0.45);opacity:0;transition:opacity 0.5s ease 0.16s">My life with art</span></span><span data-factcap=""><span data-lifecap="">My life with art</span></span></span>I can't imagine</span> my life without creating, exploring, and designing.</p>
+          <p data-reveal="" style="font-size:18px;line-height:1.6;letter-spacing:-0.011em;color:var(--muted);margin:0 0 34px;max-width:50ch;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">I genuinely love what I do, and <span data-fact=""><span data-factcard="" style="width:198px"><span data-lifewrap="" style="position:relative;display:block;width:100%;aspect-ratio:4/3;border-radius:11px;background:#0d0d0f;overflow:hidden"><span data-lifetxt="" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:-0.008em;color:rgba(255,255,255,0.42);-webkit-text-fill-color:rgba(255,255,255,0.42)">My life without art</span><img loading="lazy" decoding="async" src="images/garden.webp" alt="A garden" data-life="" data-zoom="off" style="width:100%;height:100%"><span data-lifeon="" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 14px;font-size:14px;font-weight:600;letter-spacing:-0.01em;color:#fff;-webkit-text-fill-color:#fff;text-shadow:0 1px 12px rgba(0,0,0,0.45);opacity:0;transition:opacity 0.5s ease 0.16s">My life with art</span></span><span data-factcap=""><span data-lifecap="">Click it</span></span></span>I can't imagine</span> my life without creating, exploring, and designing.</p>
         </div>
       </div>
     </div>
@@ -1098,7 +1102,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   </section>
 
   <figure data-reveal="" style="margin:64px 0 0;padding:0;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-    <img data-zc="" loading="lazy" decoding="async" src="images/cloudsort/exchange-large.webp" alt="Cloudsort Exchange" style="width:100%;display:block">
+    <img data-zc="" loading="lazy" decoding="async" src="images/cloudsort/exchange-large-1170.webp" alt="Cloudsort Exchange" style="width:100%;display:block">
     <figcaption style="max-width:1080px;margin:0 auto;padding:16px 22px 0">
       <div style="display:grid;grid-template-columns:180px 1fr;gap:44px">
         <div></div>
@@ -1287,7 +1291,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   </section>
 
   <figure data-reveal="" style="margin:64px 0 0;padding:0;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-    <img data-zc="" loading="lazy" decoding="async" src="images/focus/website.webp" alt="Focus marketing site" style="width:100%;display:block">
+    <img data-zc="" loading="lazy" decoding="async" src="images/focus/website-1170.webp" alt="Focus marketing site" style="width:100%;display:block">
     <figcaption style="max-width:1080px;margin:0 auto;padding:16px 22px 0">
       <div style="display:grid;grid-template-columns:180px 1fr;gap:44px">
         <div></div>
@@ -1430,7 +1434,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   </section>
 
   <figure data-reveal="" style="margin:64px 0 0;padding:0;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-    <img data-zc="" loading="lazy" decoding="async" src="images/bavox/dashboard.webp" alt="Bavox dashboard" style="width:100%;display:block">
+    <img data-zc="" loading="lazy" decoding="async" src="images/bavox/dashboard-1170.webp" alt="Bavox dashboard" style="width:100%;display:block">
     <figcaption style="max-width:1080px;margin:0 auto;padding:16px 22px 0">
       <div style="display:grid;grid-template-columns:180px 1fr;gap:44px">
         <div></div>
@@ -1596,7 +1600,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   </section>
 
   <figure data-reveal="" style="margin:64px 0 0;padding:0;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-    <img data-zc="" loading="lazy" decoding="async" src="images/kraymer/hero.webp" alt="Kraymer Arts hero" style="width:100%;display:block">
+    <img data-zc="" loading="lazy" decoding="async" src="images/kraymer/hero-1170.webp" alt="Kraymer Arts hero" style="width:100%;display:block">
     <figcaption style="max-width:1080px;margin:0 auto;padding:16px 22px 0">
       <div style="display:grid;grid-template-columns:180px 1fr;gap:44px">
         <div></div>
@@ -2121,7 +2125,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
       </div>
       <p data-reveal="" style="font-size:17px;line-height:1.6;letter-spacing:-0.01em;color:var(--muted);margin:0;max-width:60ch;margin-bottom:26px;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">Six steps carry every screen. If a new size is needed, the hierarchy is usually wrong somewhere else.</p>
       <div data-reveal="" style="margin-bottom:26px;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
-        <img data-zc="" loading="lazy" decoding="async" src="images/cloudsort/exchange-large.webp" alt="Cloudsort Exchange — hierarchy without borders" style="width:100%;display:block;border-radius:18px;border:0.5px solid var(--border)">
+        <img data-zc="" loading="lazy" decoding="async" src="images/cloudsort/exchange-large-1170.webp" alt="Cloudsort Exchange — hierarchy without borders" style="width:100%;display:block;border-radius:18px;border:0.5px solid var(--border)">
         <div style="font-size:15px;line-height:1.5;color:var(--muted);letter-spacing:-0.008em;margin-top:14px;max-width:56ch">Exchange. A map, a list and a detail panel on one screen, held apart by spacing rather than boxes inside boxes.</div>
       </div>
       <div data-reveal="" style="background:var(--bg);border-radius:18px;padding:8px 26px 26px;opacity:0;transform:translateY(20px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)">
@@ -3143,7 +3147,7 @@ class Component extends DCLogic {
         if (on) life.removeAttribute('data-on'); else life.setAttribute('data-on', '');
         const card = life.closest('[data-factcard]');
         const cap = card && card.querySelector('[data-lifecap]');
-        if (cap) cap.textContent = on ? 'Click it' : 'A garden instead';
+        if (cap) cap.textContent = on ? 'Click it' : 'My life with art';
         return;
       }
       if (t.closest('[data-factcard] a')) return;
